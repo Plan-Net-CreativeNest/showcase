@@ -21,3 +21,6 @@
 # Environment
 .env
 .env.local
+
+#data-set
+seed-loader.js
