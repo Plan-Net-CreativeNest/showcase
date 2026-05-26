@@ -1,0 +1,18 @@
+# Changelog
+
+A running log of meaningful changes to canonical content — primarily anything in `reference materials/`, but also significant shifts to the project's direction, structure, or workflow.
+
+This is intentionally human-written, not auto-generated from commits. Commits are too granular; this log is for the kind of "you should know about this" updates that team members and Claude both need at a glance.
+
+**Format:** Newest entries at the top. Each entry: date, author initials (or "team"), one-line summary, optional brief explanation. Link to the PR if useful.
+
+---
+
+## 2026
+
+### 2026-05-26 — team
+- Repo workflow scaffolded: added `CLAUDE.md`, `CONTRIBUTING.md`, this `CHANGELOG.md`, and `reference materials/INDEX.md`. PR-for-everything rule now explicit. Claude now branch-aware at session start.
+
+---
+
+*When you change something in `reference materials/`, add an entry here as part of the same PR.*
