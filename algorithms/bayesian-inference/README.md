@@ -1,4 +1,4 @@
-# Mood Mode — v7
+# Mood Mode 
 
 A browser-based sensory mood engine. Seven questions. A three-dimensional emotional space. 22 named moods. A result that blends the nearest neighbours by distance, learns from feedback, and tells you not just what mood you're in — but the emotional texture around it.
 
@@ -153,6 +153,82 @@ The result is a system that was built for people and then learned from them.
 
 ---
 
+## Testing vs production mode
+
+A single flag in `engine/learning.js` controls all learning thresholds:
+
+```js
+export const TESTING_MODE = true; // ← flip to false for production
+```
+
+| | Testing | Production |
+|--|---------|-----------|
+| Bayes scores start | 5 sessions | 100 sessions |
+| Blend weight starts | 3 feedback taps | 50 feedback taps |
+| Full 40% influence | 50 feedback taps | 500 feedback taps |
+| Weight learning | Every 3 feedback taps | Every 25 feedback taps |
+
+The Insights panel shows which mode is active — a green "Testing mode" badge appears so there is no ambiguity when sharing with peers.
+
+---
+
+## Seed data — automatic on first load
+
+The Bayesian layer is pre-populated with 840 synthetic sessions covering all 22 moods and all 56 answer options. This data loads automatically the first time someone opens the app — no steps required.
+
+**What happens invisibly on first load:**
+
+`learning.js` checks localStorage on startup. If empty, it fetches `seed-data.json` and loads 840 sessions and all 22 mood profiles silently. By the time the intro screen finishes its animation the Bayesian layer is already active. On every subsequent load it detects existing data and skips.
+
+**For colleagues — the entire workflow is:**
+
+```bash
+git clone <repo>
+cd mood-experience
+python3 -m http.server 8080
+# open http://localhost:8080
+```
+
+That is it. No console steps, no Node commands, no setup.
+
+**The seed dataset contains:**
+
+| Strategy | Sessions | Purpose |
+|----------|----------|---------|
+| Primary | 556 | Characteristic answer sets per mood, with variation |
+| Systematic | 90 | Ensures all 56 answer options appear 8+ times |
+| Edge cases | 150 | Answer sets between adjacent moods — trains boundaries |
+| Not quite (~8%) | 44 | Realistic inaccuracy — seeds the weight learning system |
+| **Total** | **840** | All 22 moods · All 56 options · All zones covered |
+
+**To regenerate the seed data** (only needed if moods or options change):
+
+```bash
+node seed-data.js
+# rewrites seed-data.json and seed-loader.js
+```
+
+---
+
+## Git setup
+
+**Commit these files:**
+
+```
+seed-data.js       ← the generator
+seed-data.json     ← the static dataset (auto-loaded on first visit)
+```
+
+**Add to `.gitignore`:**
+
+```
+seed-loader.js
+```
+
+`seed-loader.js` is large (400KB+), auto-generated, and only needed for manual console loading. It is fully reproducible from `seed-data.js` with one command.
+
+---
+
 ## Running locally
 
 ```bash
@@ -175,14 +251,17 @@ data/
 engine/
   distance.js        ← all maths
   output.js          ← result shape
-  learning.js        ← telemetry, feedback, weight learning, Bayes
+  learning.js        ← telemetry, feedback, weight learning, Bayes, auto-seed
+seed-data.js         ← Node script: generates synthetic sessions (run to regenerate)
+seed-data.json       ← static dataset: auto-loaded on first visit (commit this)
+seed-loader.js       ← browser console paste: manual load option (.gitignore this)
 index.html           ← full experience
 test.html            ← bare harness
 ```
 
 ---
 
-## Change to anything
+## Change anything
 
 | To change | Touch only |
 |-----------|-----------|
@@ -193,6 +272,10 @@ test.html            ← bare harness
 | Distance metric | `engine/distance.js` |
 | Result shape | `engine/output.js` |
 | Learning thresholds | `engine/learning.js` |
+| Testing vs production | `TESTING_MODE` in `engine/learning.js` |
+| Regenerate seed data | `node seed-data.js` |
 | Algorithm wiring | `mood-algorithm.js` |
+
+---
 
 

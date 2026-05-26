@@ -49,6 +49,36 @@ function save(key, val) {
   try { localStorage.setItem(key, JSON.stringify(val)); return true; } catch { return false; }
 }
 
+// ── Auto-seed ─────────────────────────────────────────────────────────────────
+// On first load, if no session data exists, automatically loads seed-data.json.
+// Colleagues clone the repo and get the Bayesian layer pre-populated with no
+// extra steps. Skips silently if data already exists or file isn't found.
+async function autoSeed() {
+  try {
+    const existing = load(STORE.SESSIONS) || [];
+    if (existing.length > 0) return; // already has data — skip
+
+    const res = await fetch('./seed-data.json');
+    if (!res.ok) return; // file not present — skip silently
+
+    const data = await res.json();
+    if (!data.sessions || !data.profiles) return;
+
+    save(STORE.SESSIONS, data.sessions.slice(0, 500));
+    save(STORE.PROFILES, data.profiles);
+    save(STORE.META, {
+      ...data.meta,
+      autoSeeded:    true,
+      autoSeededAt:  new Date().toISOString(),
+    });
+
+    console.info(`[MoodMode] Seed data auto-loaded: ${data.sessions.length} sessions, ${Object.keys(data.profiles).length} moods profiled.`);
+  } catch (e) {
+    console.info('[MoodMode] Seed data not found — starting fresh.');
+  }
+}
+autoSeed();
+
 // ── Session schema ────────────────────────────────────────────────────────────
 // {
 //   id:          string   — random session id
