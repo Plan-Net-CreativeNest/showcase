@@ -10,16 +10,30 @@ Team sharing is optional, anonymous by default, and presented as a collective mo
 
 ---
 
+## Start here
+
+- **Working on this repo for the first time?** Read [`CONTRIBUTING.md`](./CONTRIBUTING.md) — it covers the workflow (PR-for-everything, branch naming, how to use GitHub Desktop alongside Claude).
+- **Using Claude (Cowork) in this folder?** Claude reads [`CLAUDE.md`](./CLAUDE.md) at the start of every session and behaves accordingly. That file is its standing brief.
+- **Want to see what's recently changed?** Check [`CHANGELOG.md`](./CHANGELOG.md) for the human-readable log of meaningful updates.
+- **Looking for canonical project info** — brief, brand voice, audience, mood definitions? [`reference materials/INDEX.md`](./reference%20materials/INDEX.md) is the map.
+
+---
+
 ## What's in this repo
 
 This is a working showcase — algorithm explorations, design work, and feature concepts live here as they develop. It is not a production codebase.
 
 ```
 showcase/
-├── README.md               ← you are here
-└── algorithms/             ← algorithm explorations
-    ├── nearest-centroid-classifier/
-    └── bayesian-inference/
+├── README.md                ← you are here (the project)
+├── CONTRIBUTING.md          ← how to work on this repo
+├── CLAUDE.md                ← brief for Claude on every session
+├── CHANGELOG.md             ← log of meaningful changes
+├── algorithms/              ← algorithm explorations
+│   ├── nearest-centroid-classifier/
+│   └── bayesian-inference/
+└── reference materials/     ← canonical project inputs
+    └── INDEX.md             ← what's in here, conventions, current docs
 ```
 
 As the project grows, additional folders will be added alongside `algorithms/` — design assets, feature concepts, research, and more.
@@ -43,6 +57,8 @@ Builds on the nearest-centroid foundation by adding a learning layer. After enou
 ---
 
 ## Working on this repo
+
+> **Canonical workflow guide:** [`CONTRIBUTING.md`](./CONTRIBUTING.md). The summary below is a quick reference — `CONTRIBUTING.md` is the source of truth and has more detail (including how Claude fits into the workflow).
 
 ### Branching
 
