@@ -10,6 +10,9 @@ This is intentionally human-written, not auto-generated from commits. Commits ar
 
 ## 2026
 
+### 2026-05-27 — Liana
+- Added `domain research/domain-research-results.md` (PR #6): Hannah's domain availability research across 12 name candidates. 5 available, 7 taken. Key flag: moodmode.com is expiring ~June 2026 and worth a backorder. Available options include `feltmood.com` (.com), `current.me`, `currentmood.me`, `energymode.app`, and `statemind.me`.
+
 ### 2026-05-27 — Jayson
 - Updated `CLAUDE.md` to add a document sync step to the session-start protocol. Claude now compares recent git commits against `CHANGELOG.md` at the start of each session and proposes missing entries for human approval before writing.
 
