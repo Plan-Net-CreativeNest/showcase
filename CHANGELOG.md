@@ -10,8 +10,12 @@ This is intentionally human-written, not auto-generated from commits. Commits ar
 
 ## 2026
 
+### 2026-05-27 — Jayson
+- Updated `CLAUDE.md` to add a document sync step to the session-start protocol. Claude now compares recent git commits against `CHANGELOG.md` at the start of each session and proposes missing entries for human approval before writing.
+
 ### 2026-05-26 — team
 - Repo workflow scaffolded: added `CLAUDE.md`, `CONTRIBUTING.md`, this `CHANGELOG.md`, and `reference materials/INDEX.md`. PR-for-everything rule now explicit. Claude now branch-aware at session start.
+- Claude integration setup: added session-start git checks, branch-state rules, PR draft helper, and reference materials protocol.
 
 ---
 
