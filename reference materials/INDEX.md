@@ -35,12 +35,17 @@ This folder holds the **canonical inputs** for the Mood Mode project. Anything i
 
 ## Current documents
 
-*Nothing canonical lives here yet. Add documents as they become reference-worthy.*
+### mood_system_project.md
+Core project notes — 8 feeling colours with hex values, Ekman's 7 universal emotions, Plutchik's Wheel, weather synonyms for each emotion, and the refined onboarding question set. Last updated May 2026.
 
-<!-- Format for entries below:
-### filename.md
-One-line description of what's in it and when it was last meaningfully updated.
--->
+### user-flows-and-mood-results.md
+Full UX documentation — user flows A–D (first-time, returning, team, and edge-case), the sensory question framework, 70+ non-clinical mood result states with visual identity guidance, and design principles. Last updated May 2026.
+
+### showcase-nextsteps-07-05.md
+FigJam board export — 4-phase project plan with timeline and team assignments, all 6 onboarding question option sets (with gap analysis on missing options), 32+ mood mode name candidates across 5 energy/valence groups, and outstanding items to close. Last updated May 2026.
+
+### conversation-export.md
+Export manifest from the Claude shared project — a brief index of the three files above, confirming what was exported and from where. Last updated May 2026.
 
 ---
 

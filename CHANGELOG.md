@@ -11,6 +11,7 @@ This is intentionally human-written, not auto-generated from commits. Commits ar
 ## 2026
 
 ### 2026-05-27 — Jayson
+- Added 4 reference files exported from the Claude shared project: `mood_system_project.md` (colour palette, emotion frameworks, onboarding questions), `user-flows-and-mood-results.md` (UX flows, 70+ mood states), `showcase-nextsteps-07-05.md` (project plan, option sets, mood name candidates, open gaps), and `conversation-export.md` (export manifest). Updated `INDEX.md` accordingly.
 - Updated `CLAUDE.md` to add a document sync step to the session-start protocol. Claude now compares recent git commits against `CHANGELOG.md` at the start of each session and proposes missing entries for human approval before writing.
 
 ### 2026-05-26 — team
