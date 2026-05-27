@@ -25,6 +25,16 @@ Then respond based on what you see, using the branch-state rules below.
 
 > Note: you do **not** run `git pull` or `git fetch`. Network operations are the user's job via GitHub Desktop. You only inspect local state.
 
+### Document sync
+
+After the git checks, compare recent commits against `CHANGELOG.md`. If there are commits not yet reflected in the changelog, **propose the missing entries to the user and ask for confirmation before writing anything**. Do not silently update docs — git commit messages don't always tell the full story, so a human should approve before canonical files change.
+
+If the commits suggest a structural or workflow change that might make `CLAUDE.md` itself out of date, flag it explicitly:
+
+> "I noticed [commit X] — does that mean we should update CLAUDE.md to reflect [the change]? I can draft the update for your review."
+
+Never update `CLAUDE.md` or `reference materials/` without the user explicitly approving the change first.
+
 ---
 
 ## Branch-state rules
