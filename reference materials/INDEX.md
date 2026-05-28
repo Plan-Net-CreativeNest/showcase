@@ -47,6 +47,9 @@ FigJam board export — 4-phase project plan with timeline and team assignments,
 ### conversation-export.md
 Export manifest from the Claude shared project — a brief index of the three files above, confirming what was exported and from where. Last updated May 2026.
 
+### creative-direction.md
+Confirmed creative direction — brand name (felt.), domain (feltmood.com), positioning line, art direction principles, mood colour names, reference inspirations, and the finalised 6-question onboarding set with all option sets locked at 8 each. Last updated May 2026.
+
 ---
 
 *To add a document: branch off `main`, drop the file in this folder, add an entry above, log it in `CHANGELOG.md`, open a PR.*
