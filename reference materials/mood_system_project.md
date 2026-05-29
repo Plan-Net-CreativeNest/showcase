@@ -77,27 +77,33 @@ Poetic weather/time-of-day names for each emotion.
 
 ---
 
-## 5. Onboarding Questions (Refined)
+## 5. Onboarding Questions (felt. — finalised)
 
-Six sensory questions to determine the user's mood state.
+Six sensory questions to determine the user's mood state. Question wording and all option sets confirmed May 2026.
 
-**Q1 — Pick a colour that feels like you right now.**
-> Blush Petal · Honey Gold · Storm Grey · Ember Red · Arctic Blue · Forest Green · Midnight Plum
+**Q1 — Pick the colour you carry.**
+*What colour represents your mood right now?*
+> Moss · Honey · Tide · Mist · Ember · Petal · Ink · Dune
 
-**Q2 — Which sky are you under right now?**
-> Golden Hour · Morning Mist · After Rain · Storm Cloud · Dead Calm · Overcast · Clear Midnight
+**Q2 — Select your inner sky.**
+*What does your inner sky look like?*
+> Golden morning · Silver fog · Open blue · Distant storm · Amber dusk · Midnight air · After rain · Windswept
 
-**Q3 — What is your pulse today?**
-> Flat line · Slow and steady · Restless · Racing · Irregular
+**Q3 — Pick the rhythm you are moving to.**
+*What rhythm resonates with your heartbeat right now?*
+> Still · Hushed · Steady · Drifting · Flickering · Restless · Surging · Racing
 
-**Q4 — What would today feel like, under your hand?**
-> Heavy wool · Rough sand · Clean linen · Sunwarm stone · Cold glass · Wet bark
+**Q4 — Select the surface in your hand.**
+*What would now feel like to touch?*
+> Heavy wool · Rough sand · Clean linen · Sun-warm stone · Cold glass · Wet bark · Soft velvet · Cracked earth
 
-**Q5 — Pick the closest sound.**
-> Piano bar · Forest birds · Waves crashing · Quiet crickets · Static · Distant thunder · Silence
+**Q5 — Choose your inner sound.**
+*What does your inner world sound like right now?*
+> Late-night piano · Forest birds · Ocean tide · Midnight crickets · Distant thunder · Silence · Crackling fire · Wind through trees
 
-**Q6 — How full is your battery?**
-> Empty · Flickering · Half · Charged · Overloaded
+**Q6 — Choose the weight you hold.**
+*How full does your energy feel right now?*
+> Depleted · Dim · Fragile · Floating · Balanced · Bright · Electric · Saturated
 
 ---
 
@@ -108,65 +114,78 @@ Each answer scores on two axes: **Energy** (high/low) and **Valence** (positive/
 ### Q1 — Colour
 | Answer | Energy | Valence |
 |---|---|---|
-| Blush Petal | − | + |
-| Honey Gold | + | + |
-| Storm Grey | + | − |
-| Ember Red | + | − |
-| Arctic Blue | − | − |
-| Forest Green | − | + |
-| Midnight Plum | − | − |
+| Moss | − | + |
+| Honey | + | + |
+| Tide | − | neutral |
+| Mist | − | neutral |
+| Ember | − | + |
+| Petal | − | + |
+| Ink | − | − |
+| Dune | − | + |
 
 ### Q2 — Sky
 | Answer | Energy | Valence |
 |---|---|---|
-| Golden Hour | + | + |
-| Morning Mist | − | + |
-| After Rain | − | + |
-| Storm Cloud | + | − |
-| Dead Calm | − | neutral |
-| Overcast | − | − |
-| Clear Midnight | − | − |
+| Golden morning | + | + |
+| Silver fog | − | neutral |
+| Open blue | + | + |
+| Distant storm | + | − |
+| Amber dusk | − | + |
+| Midnight air | − | − |
+| After rain | − | + |
+| Windswept | + | neutral |
 
-### Q3 — Pulse
+### Q3 — Rhythm
 | Answer | Energy | Valence |
 |---|---|---|
-| Flat line | − | − |
-| Slow and steady | − | + |
+| Still | − | neutral |
+| Hushed | − | + |
+| Steady | neutral | + |
+| Drifting | − | neutral |
+| Flickering | − | − |
 | Restless | + | − |
+| Surging | + | ambiguous* |
 | Racing | + | ambiguous* |
-| Irregular | + | − |
 
-> *Racing leans negative unless Q1/Q2 are strongly positive.
+> *Surging and Racing lean negative unless Q1/Q2 are strongly positive.
 
-### Q4 — Texture
+### Q4 — Surface
 | Answer | Energy | Valence |
 |---|---|---|
 | Heavy wool | − | − |
 | Rough sand | + | − |
 | Clean linen | − | + |
-| Sunwarm stone | + | + |
+| Sun-warm stone | + | + |
 | Cold glass | − | − |
 | Wet bark | − | − |
+| Soft velvet | − | + |
+| Cracked earth | + | − |
 
 ### Q5 — Sound
 | Answer | Energy | Valence |
 |---|---|---|
-| Piano bar | + | + |
+| Late-night piano | − | + |
 | Forest birds | − | + |
-| Waves crashing | − | + |
-| Quiet crickets | − | + |
-| Static | + | − |
+| Ocean tide | − | + |
+| Midnight crickets | − | + |
 | Distant thunder | + | − |
 | Silence | − | neutral |
+| Crackling fire | − | + |
+| Wind through trees | − | neutral |
 
-### Q6 — Battery
+### Q6 — Weight
 | Answer | Energy | Valence |
 |---|---|---|
-| Empty | − | − |
-| Flickering | − | − |
-| Half | − | neutral |
-| Charged | + | + |
-| Overloaded | + | − |
+| Depleted | − | − |
+| Dim | − | − |
+| Fragile | − | − |
+| Floating | − | neutral |
+| Balanced | neutral | + |
+| Bright | + | + |
+| Electric | + | ambiguous* |
+| Saturated | + | − |
+
+> *Electric leans positive unless Q2/Q3 are strongly negative.
 
 ---
 
@@ -200,8 +219,8 @@ NEGATIVE ───────────────┼───────�
 
 ### Tie-break Rules
 - **Q2 (Sky)** is the anchor question — breaks ties, carries strongest atmospheric weight
-- **Q3 (Pulse) + Q6 (Battery)** = most reliable energy signals
-- **Q1 (Colour) + Q4 (Texture)** = most reliable valence signals
+- **Q3 (Rhythm) + Q6 (Weight)** = most reliable energy signals
+- **Q1 (Colour) + Q4 (Surface)** = most reliable valence signals
 - **Q5 (Sound)** reinforces both axes
 
 ---
@@ -254,29 +273,29 @@ NEGATIVE ───────────────┼───────�
 
 ## 9. Example Algorithm Flow
 
-**Answers:** Storm Grey · Overcast · Slow and steady · Heavy wool · Quiet crickets · Flickering
+**Answers:** Mist · Midnight air · Drifting · Heavy wool · Silence · Floating
 
 | Q | Answer | Energy | Valence | Running E | Running V |
 |---|---|---|---|---|---|
-| Q1 Colour | Storm Grey | +1 | −1 | +1 | −1 |
-| Q2 Sky | Overcast | −1 | −1 | 0 | −2 |
-| Q3 Pulse | Slow and steady | −1 | +1 | −1 | −1 |
-| Q4 Texture | Heavy wool | −1 | −1 | −2 | −2 |
-| Q5 Sound | Quiet crickets | −1 | +1 | −3 | −1 |
-| Q6 Battery | Flickering | −1 | −1 | **−4** | **−2** |
+| Q1 Colour | Mist | −1 | 0 | −1 | 0 |
+| Q2 Sky | Midnight air | −1 | −1 | −2 | −1 |
+| Q3 Rhythm | Drifting | −1 | 0 | −3 | −1 |
+| Q4 Surface | Heavy wool | −1 | −1 | −4 | −2 |
+| Q5 Sound | Silence | −1 | 0 | −5 | −2 |
+| Q6 Weight | Floating | −1 | 0 | **−6** | **−2** |
 
-**Final tally:** Energy −4 · Valence −2
+**Final tally:** Energy −6 · Valence −2
 
 **Quadrant:** Energy − · Valence − → **Blue Hour zone**
 
 **Refinement:**
-- Energy driven by: Slow and steady + Heavy wool + Flickering → weight/fatigue, not numbness
-- Valence driven by: Overcast + Heavy wool → dull pressing weight, not sharp grief
-- Candidate words: Waterlogged · Heavy · Muted
-- Q2 tie-break (Overcast) → persistent and dulling → **Muted wins**
+- Energy driven by: Drifting + Heavy wool + Floating → diffuse fatigue, not sharp depletion
+- Valence driven by: Midnight air + Heavy wool → low-grade heaviness, not acute grief
+- Candidate words: Foggy · Dim · Hollow
+- Q2 tie-break (Midnight air) → quiet and dark, borderless → **Foggy wins**
 
 **Output:**
-> **Muted.** *(The volume is turned down on everything.)*
+> **Foggy.** *(Hard to see far ahead. Unclear and a bit stuck.)*
 
 ---
 
